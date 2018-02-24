@@ -20,7 +20,14 @@ public class MergeSort {
             int pivot = lowIndex + (highIndex - lowIndex) / 2;
             mergeSort(lowIndex, pivot);
             mergeSort(pivot + 1, highIndex);
+            System.out.println("Array Progress:");
+            for (int a = lowIndex; a < highIndex; a++) {
+                System.out.print(array[a]);
+                System.out.print(" ");
+            }
+            System.out.println();
             mergeArrays(lowIndex, pivot, highIndex);
+
         }
     }
 
@@ -51,13 +58,6 @@ public class MergeSort {
             k++;
             i++;
         }
-
-        System.out.println("SubArray Iteration:");
-        for (int x:array) {
-            System.out.print(x);
-            System.out.print(" ");
-        }
-        System.out.println();
     }
 
     public static void main (String [] args) {
@@ -70,8 +70,16 @@ public class MergeSort {
             array[i] = scanner.nextInt();
         }
 
+        System.out.println("Initial Array:");
+        for (int j = 0; j < array.length; j++) {
+            System.out.print(array[j]);
+            System.out.print(" ");
+        }
+        System.out.println();
+
         MergeSort sort = new MergeSort();
         sort.sort(array);
+        System.out.println("Final Array:");
         for (int i:array) {
             System.out.print(i);
             System.out.print(" ");
