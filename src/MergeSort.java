@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class MergeSort {
     private int [] array;
     private int [] tempArray;
@@ -52,7 +54,15 @@ public class MergeSort {
     }
 
     public static void main (String [] args) {
-        int [] array = {23, 1, 54, 12, 78, 43, 2, 67, 84, 34};
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("How many numbers are you typing? :");
+        int length = scanner.nextInt();
+        int [] array = new int[length];
+        for (int i = 0; i < length; i++) {
+            System.out.println("Enter number " + i);
+            array[i] = scanner.nextInt();
+        }
+
         MergeSort sort = new MergeSort();
         sort.sort(array);
         for (int i:array) {
