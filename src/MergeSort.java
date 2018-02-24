@@ -51,6 +51,13 @@ public class MergeSort {
             k++;
             i++;
         }
+
+        System.out.println("SubArray Iteration:");
+        for (int x:array) {
+            System.out.print(x);
+            System.out.print(" ");
+        }
+        System.out.println();
     }
 
     public static void main (String [] args) {
