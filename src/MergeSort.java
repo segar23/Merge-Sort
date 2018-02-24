@@ -2,12 +2,17 @@ public class MergeSort {
     private int [] array;
     private int [] tempArray;
 
+    //Public method. This will call the recursive sorting
     public void sort (int [] array) {
         this.array = array;
         this.tempArray = new int[this.array.length];
         mergeSort(0, array.length - 1);
     }
 
+    /**
+     * Merge Sort method. This will split the array in sub arrays by halves,
+     * until it gets to only two items to sort. Then, it will put everything together
+     */
     private void mergeSort(int lowIndex, int highIndex) {
         if (lowIndex < highIndex) {
             int pivot = lowIndex + (highIndex - lowIndex) / 2;
@@ -17,6 +22,9 @@ public class MergeSort {
         }
     }
 
+    /**
+     * This is the Merge function that will make sure that the all the subarrays are in order
+     */
     private void mergeArrays(int lowIndex, int pivot, int highIndex) {
         for (int i = 0; i <= highIndex; i++) {
             tempArray[i] = array[i];
